@@ -27,27 +27,32 @@ The system is divided into two distinct modular pipelines:
 **1. Install Dependencies**
 ```bash
 pip install -r requirements.txt
+```
 
 **2. Setup Environment Variables**
 *Create a .env file in the root directory and add your Groq API key:
-
+```env
 GROQ_API_KEY=your_api_key_here
+```
 
 **3. Build the Knowledge Bank**
 *Place your engineering PDFs in data/me_textbooks/ and run the ingestion script:
+```bash
 python ingest.py
-
+```
 **4. Run the Async Extraction Engine
+```bash
 python async_extractor.py
+```
 
-***🔮 Future Scope of Work (Roadmap)***
+# ***🔮 Future Scope of Work (Roadmap)***
 
-While the V1 architecture successfully handles text-based semantic extraction, technical documentation relies heavily on visual data. The planned V2 upgrades include:
+* While the V1 architecture successfully handles text-based semantic extraction, technical documentation relies heavily on visual data. The planned V2 upgrades include:
 
-Multimodal OCR Ingestion: Replacing the standard PDF loader with Unstructured.io to detect image bounding boxes, extracting thermodynamic diagrams and machine schematics.
+* Multimodal OCR Ingestion: Replacing the standard PDF loader with Unstructured.io to detect image bounding boxes, extracting thermodynamic diagrams and machine schematics.
 
-Vision LLM Integration: Passing extracted diagrams through a Vision Model (e.g., Llama-3.2-Vision) to generate text summaries for the FAISS vector index.
+* Vision LLM Integration: Passing extracted diagrams through a Vision Model (e.g., Llama-3.2-Vision) to generate text summaries for the FAISS vector index.
 
-API Wrapper: Exposing the asyncio Map-Reduce engine via a FastAPI endpoint to allow external microservices to trigger bulk extractions.
+* API Wrapper: Exposing the asyncio Map-Reduce engine via a FastAPI endpoint to allow external microservices to trigger bulk extractions.
 
-Streamlit UI: Building a front-end dashboard to visualize the extracted engineering dictionaries in real-time tabular formats.
+* Streamlit UI: Building a front-end dashboard to visualize the extracted engineering dictionaries in real-time tabular formats.
