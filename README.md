@@ -47,7 +47,7 @@ python async_extractor.py
 
 # ***🔮 Future Scope of Work (Roadmap)***
 
-* While the V1 architecture successfully handles text-based semantic extraction, technical documentation relies heavily on visual data. The planned V2 upgrades include:
+While the V1 architecture successfully handles text-based semantic extraction, technical documentation relies heavily on visual data. The planned V2 upgrades include:
 
 * Multimodal OCR Ingestion: Replacing the standard PDF loader with Unstructured.io to detect image bounding boxes, extracting thermodynamic diagrams and machine schematics.
 
